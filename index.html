@@ -10,6 +10,11 @@
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -112,14 +117,33 @@
 <!--Schedule-->
 <div class="section scrollspy red darken-1" id="schedule">
     <div class="container">
-        <h2 class="header" style="color:white">Schedule </h2>
+      <div>
+        <h2 class="header" style="color:white;display:inline;">Schedule </h2>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger red darken-2" style="float:right;" href="#modal1">
+          View Schedules
+        </a>
+      </div>
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <iframe
+              src="https://docs.google.com/spreadsheets/d/1fkblPncX4GFSfvv_abPFTaUv-w4kJ_Bou_sTmha78D0/pubhtml?gid=1375784309&amp;single=true&amp;widget=true&amp;headers=false">
+              </iframe>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+            </div>
+          </div>
           <ul class="collection">
 
             <li class="collection-item avatar light-blue lighten-3">
               <i class="material-icons circle red">attach_money</i>
               <span class="title">Fees:</span>
               <p>Zero tutoring fees if you buy a guitar from us for the first month.<br>
-                 Afterwards, it's just 1000 ₹/month.
+                 Afterwards or Otherwise, it's just 1000 ₹/month.
               </p>
             </li>
 
@@ -254,6 +278,12 @@
     <!--  Scripts-->
     <script src="min/plugin-min.js"></script>
     <script src="min/custom-min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
+    </script>
 
     </body>
 </html>
